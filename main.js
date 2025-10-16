@@ -2,6 +2,15 @@ onload = () =>{
     document.body.classList.remove("container");
 };
 
+// 💌 Delayed heartfelt message
+setTimeout(() => {
+  const msg = document.createElement('p');
+  msg.classList.add('birthday-message');
+  msg.innerHTML = "Wag kana maging tanga, pls lang! <3 ";
+  document.body.appendChild(msg);
+}, 5000);
+
+
 // 🌠 Multi-layered, realistic fireworks
 function createFirework() {
   const container = document.querySelector('.fireworks');
@@ -148,4 +157,18 @@ window.addEventListener('click', () => {
   }
 }, { once: true });
 
+// 🌷 Floating hearts animation
+function createHeart() {
+  const heartsContainer = document.querySelector('.floating-hearts');
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.textContent = '💖';
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.fontSize = (1 + Math.random() * 2) + 'rem';
+  heartsContainer.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 6000);
+}
+
+setInterval(createHeart, 700); // Create a new heart every 0.7s
 

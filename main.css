@@ -1458,25 +1458,61 @@ body {
   }
 }
 
-.music-btn {
+.birthday-message {
   position: fixed;
-  bottom: 5%;
-  right: 5%;
-  background: rgba(255, 182, 193, 0.8);
-  border: none;
-  border-radius: 50px;
-  padding: 12px 20px;
-  font-size: 1rem;
-  color: white;
-  cursor: pointer;
-  font-family: 'Poppins', sans-serif;
-  box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
-  transition: all 0.3s ease;
-  z-index: 2000;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5vmin;
+  color: #fffafc;
+  text-align: center;
+  text-shadow: 0 0 10px #ff99cc, 0 0 20px #ff66b2;
+  opacity: 0;
+  animation: fadeInMessage 2s ease forwards 7s;
+  z-index: 1000;
 }
 
-.music-btn:hover {
-  transform: scale(1.1);
-  background: rgba(255, 105, 180, 1);
+@keyframes fadeInMessage {
+  from { opacity: 0; transform: translate(-50%, -10%); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.floating-hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  color: rgba(255, 192, 203, 0.8);
+  font-size: 1.5rem;
+  animation: floatUp 6s linear forwards;
+  filter: drop-shadow(0 0 8px #ffb6c1);
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.3);
+    opacity: 0;
+  }
+}
+
+body {
+  opacity: 0;
+  animation: pageFadeIn 2s ease forwards;
+}
+
+@keyframes pageFadeIn {
+  to { opacity: 1; }
 }
 
