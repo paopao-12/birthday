@@ -142,8 +142,10 @@ window.addEventListener('click', () => {
     music.volume = 0;
     music.play();
     let fade = setInterval(() => {
-      if (music.volume < 1) music.volume += 0.05;
+      if (music.volume < 0.3) music.volume += 0.02; // fade to 30% max
       else clearInterval(fade);
     }, 200);
   }
 }, { once: true });
+
+
